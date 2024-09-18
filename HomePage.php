@@ -7,10 +7,9 @@ class HomePage
     }
 }
 
-
 namespace App\Admin;
 class HomePage
-{
+{   
     public function tampil() : void {
         echo "Halaman depan admin";
     }
@@ -26,6 +25,6 @@ class ManajemenArtikel
     }
 }
 
-
-$hp = new \App\Guest\HomePage();
+use App\Guest as G;
+$hp = new G\HomePage();
 $hp->tampil();
