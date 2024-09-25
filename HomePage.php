@@ -15,7 +15,6 @@ class HomePage
     }
 }
 
-
 namespace App\Admin;
 class ManajemenArtikel
 {
@@ -25,6 +24,6 @@ class ManajemenArtikel
     }
 }
 
-use App\Guest as G;
-$hp = new G\HomePage();
+
+$hp = new \App\Guest\HomePage();
 $hp->tampil();
