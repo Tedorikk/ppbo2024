@@ -1,0 +1,22 @@
+<?php
+
+namespace App\Admin;
+class Pegawai
+{
+    public $nip;
+    public $nama;
+    protected $no_hp;
+    public $alamat;
+    public function cekIn() {
+        return true;
+    }
+    public function cekOut() {
+        return true;
+    }
+    public function getNoHp() {
+        return $this->no_hp;
+    }
+    public function setNoHp($no_hp) {
+        $this->no_hp = $no_hp;
+    }
+}
