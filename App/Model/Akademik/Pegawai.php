@@ -20,7 +20,7 @@ class Pegawai
     public function cekOut() {
         return true;
     }
-    public function getNoHp() {
+    protected function getNoHp() {
         return $this->no_hp;
     }
     public function setNoHp($no_hp) {
