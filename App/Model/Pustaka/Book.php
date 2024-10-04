@@ -1,17 +1,21 @@
 <?php
 
-class Book {
-    public $ISBN;
-    public $title;
-    public $description;
-    public $category;
-    public $language;
-    public $numberOfPage;
-    public $author;  
-    public $publisher;  
+namespace App\Model\Pustaka;
 
-    public function __construct($ISBN, $title, $description, $category, $language, $numberOfPage, $author, $publisher) {
-        $this->ISBN = $ISBN;
+class Book
+{
+    public int $isbn;
+    public string $title;
+    public string $description;
+    public string $category;
+    public string $language;
+    public int $numberOfPage;
+    public string $author;
+    public string $publisher;
+
+    public function __construct(int $isbn, string $title, string $description, string $category, string $language, int $numberOfPage, string $author, string $publisher)
+    {
+        $this->isbn = $isbn;
         $this->title = $title;
         $this->description = $description;
         $this->category = $category;
@@ -21,24 +25,25 @@ class Book {
         $this->publisher = $publisher;
     }
 
-    public function showAll() {
+    public function showAll(): array
+    {
         return [
-            'ISBN' => $this->ISBN,
+            'isbn' => $this->isbn,
             'title' => $this->title,
             'description' => $this->description,
             'category' => $this->category,
             'language' => $this->language,
             'numberOfPage' => $this->numberOfPage,
-            'author' => $this->author->show('brief'), 
-            'publisher' => $this->publisher->name 
+            'author' => $this->author,
+            'publisher' => $this->publisher
         ];
     }
 
-    public function detail($ISBN) {
-        if ($this->ISBN == $ISBN) {
+    public function detail($ISBN): array
+    {
+        if ($this->isbn === $ISBN) {
             return $this->showAll();
-        } else {
-            return null;  
         }
+        return [];
     }
 }

@@ -1,24 +1,20 @@
 <?php
 
-class Author {
-    public $name;
-    public $description;
+namespace App\Model\Pustaka;
 
-    public function __construct($name, $description) {
+class Author
+{
+    public string $name;
+    public string $description;
+
+    public function __construct(string $name, string $description)
+    {
         $this->name = $name;
         $this->description = $description;
     }
 
-    public function show($type) {
-        if ($type == 'brief') {
-            return [
-                'name' => $this->name
-            ];
-        } else if ($type == 'detailed') {
-            return [
-                'name' => $this->name,
-                'description' => $this->description
-            ];
-        }
+    public function show(): array
+    {
+        return [];
     }
 }
